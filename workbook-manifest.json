@@ -1,0 +1,29 @@
+{
+ "name": "Essential Grammar in Use 숙제 워크북",
+ "short_name": "GIU-SE 워크북",
+ "lang": "ko",
+ "id": "workbook.html",
+ "start_url": "workbook.html",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#f5f5f2",
+ "theme_color": "#f5f5f2",
+ "icons": [
+  {
+   "src": "workbook-icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "workbook-icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "workbook-icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
