@@ -162,7 +162,7 @@ textarea{width:100%;font:13px/1.5 ui-monospace,Menlo,monospace;padding:10px;bord
 #zoom .x{position:fixed;top:10px;right:12px;background:#fff;color:#000;border-radius:99px;padding:6px 14px;font-weight:700}
 @media (min-width:1240px){#zoom img{margin:20px auto}}
 </style>
-<link rel="icon" href="workbook-icon-192.png"><link rel="apple-touch-icon" href="workbook-apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="GIU-SE 워크북"><link rel="manifest" href="workbook-manifest.json"><script>try { if ('serviceWorker' in navigator && window.isSecureContext) navigator.serviceWorker.register('sw.js').catch(function () {}); } catch (e) {}</script></head>
+<link rel="icon" href="workbook-icon-192.png"><link rel="apple-touch-icon" href="workbook-apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="GIU-SE 워크북"><link rel="manifest" href="workbook-manifest.json"><script>try { if ('serviceWorker' in navigator && window.isSecureContext) navigator.serviceWorker.register('sw.js').catch(function () {}); } catch (e) {}</script><!--LEESS-GATE1--><script src="/leess/roster.js"></script><script src="/leess/gate.js"></script></head>
 <body>
 <div class="wrap">
 <header>
@@ -333,6 +333,7 @@ $('#findU').oninput = () => {
 function nameOk() {
   const name = cleanName($('#name').value);
   if (!name) { $('#msg').textContent = '이름을 먼저 입력하세요.'; $('#name').focus(); window.scrollTo(0, 0); return false; }
+  if (!(window.LEESS && LEESS.ok(name))) { $('#msg').textContent = window.LEESS ? LEESS.msg() : '수강생 명단을 불러오지 못했습니다. 인터넷 연결을 확인하고 새로고침하세요.'; $('#name').focus(); window.scrollTo(0, 0); return false; } /*LEESS*/
   store.set('name', name); $('#msg').textContent = ''; return true;
 }
 let pending = null;
